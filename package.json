@@ -1,0 +1,11 @@
+{
+  "name": "cse341-project2",
+  "version": "1.0.0",
+  "description": "My Second project for week3 & 4 assignemnt",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Fong",
+  "license": "ISC"
+}
