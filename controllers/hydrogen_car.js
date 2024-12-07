@@ -44,13 +44,13 @@ const createHdCar = async (req, res) => {
   */
   try{
   const hdCar = {
-    name: req.body.name,
-    screenSize: req.body.screenSize,
-    cpuType: req.body.cpuType,
-    memory: req.body.memory,
-    storage: req.body.storage,
-    resolution: req.body.resolution,
-    price: req.body.price    
+    model: req.body.model,
+    batteryCapacity: req.body.batteryCapacity,
+    EnduranceDistance: req.body.EnduranceDistance,
+    MaximumHorsepower: req.body.MaximumHorsepower,
+    MaximumTorque: req.body.MaximumTorque,
+    DriveSystem: req.body.DriveSystem,
+    cargoSpace: req.body.cargoSpace     
   };
 
   const response = await mongodb.getDatabase().db().collection('hdCars').insertOne(hdCar);
@@ -74,13 +74,13 @@ const updateHdCar = async (req, res) => {
     }
     const hdCarId = new ObjectId(req.params.id);
     const hdCar = {
-        name: req.body.name,
-        screenSize: req.body.screenSize,
-        cpuType: req.body.cpuType,
-        memory: req.body.memory,
-        storage: req.body.storage,
-        resolution: req.body.resolution,
-        price: req.body.price 
+      model: req.body.model,
+      batteryCapacity: req.body.batteryCapacity,
+      EnduranceDistance: req.body.EnduranceDistance,
+      MaximumHorsepower: req.body.MaximumHorsepower,
+      MaximumTorque: req.body.MaximumTorque,
+      DriveSystem: req.body.DriveSystem,
+      cargoSpace: req.body.cargoSpace   
     };
     const response = await mongodb.getDatabase().db().collection('hdCars').replaceOne({ _id: hdCarId }, hdCar);
     console.log(response);
