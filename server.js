@@ -7,7 +7,7 @@ const { ServerClosedEvent } = require('mongodb');
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app
@@ -24,16 +24,18 @@ app
 //allow passport to use "express-session"
 .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader(  //test
+    res.setHeader(  
       'Access-Control-Allow-Heaters',
-      'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+      'Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization'
     );
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader(
+      'Access-Control-Allow-Methods', 
+      'GET, POST, PUT, OPTIONS, DELETE');
     next();
 })
 .use(cors({methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']}))
 .use(cors({origin: '*'}))
-.use("/", require("./routes"))
+.use("/", require("./routes/index.js"))
 
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
@@ -42,7 +44,7 @@ passport.use(new GitHubStrategy({
 },
 function(accessToken, refreshToken, profile, done) {
   // UserActivation.findorCreate({ githubId: profile.id}, function (err, user) {
-return done(null, profile);
+  return done(null, profile);
   // })
 }
 ));
@@ -54,7 +56,7 @@ passport.deserializeUser((user, done) =>{
   done(null, user);
 });
 
-app.get('/', (req,res)=> {res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.username}` : `Logged Out`)});
+app.get('/', (req,res)=> {res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : `Logged Out`)});
 
 app.get('/github/callback', passport.authenticate('github', {
   failureRedirect: '/api-docs', session: false}),
