@@ -7,7 +7,7 @@ const { ServerClosedEvent } = require('mongodb');
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 3001;
 const app = express();
 
 app
