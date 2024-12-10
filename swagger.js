@@ -7,8 +7,8 @@ const doc = {
   },
   //host: 'cse341-project2-tsh7.onrender.com',
   host: 'localhost:3000',
-  schemes: ['https']
-  // schemes: ['http']
+  //schemes: ['http']
+  schemes: ['http']
  
 };
 
