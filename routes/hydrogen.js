@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { userValidationRules, validate } = require('../middleware/validator');
-const hdCarsController = require('../controllers/hydrogen_car');
+const hdCarsController = require('../controllers/hydrogen');
 const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', hdCarsController.getAll);

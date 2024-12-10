@@ -5,8 +5,8 @@ const doc = {
     title: 'Clean energy vehicle API',
     description: 'Clean energy vehicle API includes electric vehicle and hydrogen vehicle project'
   },
-  host: 'cse341-project2-tsh7.onrender.com',
-  // host: 'localhost:3001',
+  //host: 'cse341-project2-tsh7.onrender.com',
+  host: 'localhost:3000',
   schemes: ['https']
   // schemes: ['http']
  

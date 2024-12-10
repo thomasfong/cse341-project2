@@ -3,8 +3,8 @@ const passport = require('passport');
 
 router.use('/', require('./swagger'));
 
-router.use('/electric_car', require('./electric_car'));
-router.use('/hydrogen_car', require('./hydrogen_car'));
+router.use('/electric', require('./electric'));
+router.use('/hydrogen', require('./hydrogen'));
 
 router.get('/login', passport.authenticate('github'), (req,res) => {});
 

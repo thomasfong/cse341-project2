@@ -5,7 +5,7 @@
     "description": "Clean energy vehicle API includes electric vehicle and hydrogen vehicle project",
     "version": "1.0.0"
   },
-  "host": "cse341-project2-tsh7.onrender.com",
+  "host": "localhost:3001",
   "basePath": "/",
   "schemes": [
     "https"
@@ -41,7 +41,7 @@
         }
       }
     },
-    "/electric_car/": {
+    "/electric/": {
       "get": {
         "summary": "Get all evCars",
         "description": "",
@@ -108,7 +108,7 @@
         }
       }
     },
-    "/electric_car/{id}": {
+    "/electric/{id}": {
       "get": {
         "summary": "Get evCar by id",
         "description": "",
@@ -227,7 +227,7 @@
         }
       }
     },
-    "/hydrogen_car/": {
+    "/hydrogen/": {
       "get": {
         "summary": "Get all hdCars",
         "description": "",
@@ -294,7 +294,7 @@
         }
       }
     },
-    "/hydrogen_car/{id}": {
+    "/hydrogen/{id}": {
       "get": {
         "summary": "Get hdCar by id",
         "description": "",

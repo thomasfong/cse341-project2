@@ -1,0 +1,39 @@
+// LOCALHOST
+
+### Get all employee GET http://localhost:3000/employees
+
+### Get an employee with employee ID GET http://localhost:3000/employees/67413b7f2f6501b1cf0d1e63
+
+### Create an employee POST http://localhost:3000/employees HTTP/1.1 content-type: application/json
+
+{
+"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 45000
+}
+
+### Update an employee (Double check ID) PUT http://localhost:3000/employees/67417d43a94556d6ec0ba5b HTTP/1.1 content-type: application/json
+
+{
+"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 48000
+}
+
+### Delete an employee DELETE http://localhost:3000/employees/674156522c6ff8c28ab04b6e HTTP/1.1
+
+// PRODUCTION
+
+### Get all employee GET https://cse341-project2-0vud.onrender.com/employees
+
+### Get an employee with employee ID GET https://cse341-project2-0vud.onrender.com/employees/67413b7f2f6501b1cf0d1e63
+
+### Create an employee POST https://cse341-project2-0vud.onrender.com/employees HTTP/1.1 content-type: application/json
+
+{
+"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 45000
+}
+
+### Update an employee (Double check ID) PUT https://cse341-project2-0vud.onrender.com/employees/67417d43a94556d6ec0ba5b HTTP/1.1 content-type: application/json
+
+{
+"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 48000
+}
+
+### Delete an employee DELETE https://cse341-project2-0vud.onrender.com/employees/674156522c6ff8c28ab04b6e HTTP/1.1
