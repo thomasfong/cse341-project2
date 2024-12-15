@@ -43,6 +43,17 @@ GET https://cse341-project2-tsh7.onrender.com/employees
 ### Get an employee with employee ID 
 GET https://cse341-project2-0vud.onrender.com/employees/675e72688a2cdaf0a6649044
 
+{
+  "name": "Thomas",
+  "employeeId": "10",
+  "position": "manager",
+  "email": "thomas10@gmail.com",
+  "phone": "6868 6868",
+  "department": "Sales Department",
+  "hireDate": "January 4, 2018",
+  "salary": "30,000"
+}
+
 ### Create an employee 
 POST https://cse341-project2-0vud.onrender.com/employees HTTP/1.1 content-type: application/json
 
