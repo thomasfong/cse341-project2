@@ -1,39 +1,53 @@
 // LOCALHOST
 
-### Get all employee GET http://localhost:3000/employees
+### Get all employee 
+GET http://localhost:3000/employees
 
-### Get an employee with employee ID GET http://localhost:3000/employees/67413b7f2f6501b1cf0d1e63
+### Get an employee with employee ID 
+GET http://localhost:3000/employees/675e72688a2cdaf0a6649044
 
-### Create an employee POST http://localhost:3000/employees HTTP/1.1 content-type: application/json
-
+### Create an employee 
+POST http://localhost:3000/employees HTTP/1.1 content-type: application/json
 {
-"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 45000
+  "name": "Thomas",
+  "employeeId": "10",
+  "position": "manager",
+  "email": "thomas10@gmail.com",
+  "phone": "6868 6868",
+  "department": "Sales Department",
+  "hireDate": "January 4, 2018",
+  "salary": "30,000"
 }
 
-### Update an employee (Double check ID) PUT http://localhost:3000/employees/67417d43a94556d6ec0ba5b HTTP/1.1 content-type: application/json
-
-{
-"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 48000
+### Update an employee (Double check ID) 
+PUT http://localhost:3000/employees/675e808e3b615800e037168d HTTP/1.1 content-type: application/json
+{  
+    "name":"Kim",
+    "employeeId":"CB569872",
+    "position":"Senior Sales",
+    "email":"Kimwu@gmail.com",
+    "phone":"9394 9596",
+    "department":"Sales Department",
+    "hireDate":"January 1, 2016",
+    "salary":"20,000"
 }
 
-### Delete an employee DELETE http://localhost:3000/employees/674156522c6ff8c28ab04b6e HTTP/1.1
+### Delete an employee 
+DELETE http://localhost:3000/employees/674156522c6ff8c28ab04b6e HTTP/1.1
 
 // PRODUCTION
 
-### Get all employee GET https://cse341-project2-0vud.onrender.com/employees
+### Get all employee 
+GET https://cse341-project2-tsh7.onrender.com/employees
 
-### Get an employee with employee ID GET https://cse341-project2-0vud.onrender.com/employees/67413b7f2f6501b1cf0d1e63
+### Get an employee with employee ID 
+GET https://cse341-project2-0vud.onrender.com/employees/675e72688a2cdaf0a6649044
 
-### Create an employee POST https://cse341-project2-0vud.onrender.com/employees HTTP/1.1 content-type: application/json
+### Create an employee 
+POST https://cse341-project2-0vud.onrender.com/employees HTTP/1.1 content-type: application/json
 
-{
-"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 45000
-}
+### Update an employee (Double check ID) 
+PUT https://cse341-project2-0vud.onrender.com/employees/675e72688a2cdaf0a6649044 HTTP/1.1 content-type: application/json
 
-### Update an employee (Double check ID) PUT https://cse341-project2-0vud.onrender.com/employees/67417d43a94556d6ec0ba5b HTTP/1.1 content-type: application/json
-
-{
-"name": "Gryffin Door", "position": "UX Designer", "email": "haloray@example.com", "phone": "+1-555-345-6789", "department": "Design", "hireDate": "2023-06-16", "salary": 48000
-}
-
-### Delete an employee DELETE https://cse341-project2-0vud.onrender.com/employees/674156522c6ff8c28ab04b6e HTTP/1.1
+### Delete an employee 
+DELETEhttps://cse341-project2-0vud.onrender.com/employees/675e808e3b615800e037168d HTTP/1.1
