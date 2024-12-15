@@ -1,16 +1,30 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Clean energy vehicle API",
-    "description": "Clean energy vehicle API includes electric vehicle and hydrogen vehicle project",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
   },
-  "host": "localhost:3001",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Hello World"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/login": {
       "get": {
         "description": "",
@@ -41,9 +55,11 @@
         }
       }
     },
-    "/electric/": {
+    "/employees/": {
       "get": {
-        "summary": "Get all evCars",
+        "tags": [
+          "employees"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -51,14 +67,13 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       },
       "post": {
-        "summary": "Create a new evCar",
+        "tags": [
+          "employees"
+        ],
         "description": "",
         "parameters": [
           {
@@ -67,25 +82,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "model": {
+                "name": {
                   "example": "any"
                 },
-                "batteryCapacity": {
+                "employeeId": {
                   "example": "any"
                 },
-                "EnduranceDistance": {
+                "position": {
                   "example": "any"
                 },
-                "MaximumHorsepower": {
+                "email": {
                   "example": "any"
                 },
-                "MaximumTorque": {
+                "phone": {
                   "example": "any"
                 },
-                "DriveSystem": {
+                "department": {
                   "example": "any"
                 },
-                "cargoSpace": {
+                "hireDate": {
+                  "example": "any"
+                },
+                "salary": {
                   "example": "any"
                 }
               }
@@ -93,14 +111,14 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "204": {
+            "description": "No Content"
           },
           "401": {
             "description": "Unauthorized"
           },
-          "422": {
-            "description": "Unprocessable Entity"
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -108,9 +126,11 @@
         }
       }
     },
-    "/electric/{id}": {
+    "/employees/{id}": {
       "get": {
-        "summary": "Get evCar by id",
+        "tags": [
+          "employees"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -129,14 +149,13 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       },
       "put": {
-        "summary": "Update evCars by id",
+        "tags": [
+          "employees"
+        ],
         "description": "",
         "parameters": [
           {
@@ -151,25 +170,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "model": {
+                "name": {
                   "example": "any"
                 },
-                "batteryCapacity": {
+                "employeeId": {
                   "example": "any"
                 },
-                "cpuType": {
+                "position": {
                   "example": "any"
                 },
-                "MaximumHorsepower": {
+                "email": {
                   "example": "any"
                 },
-                "MaximumTorque": {
+                "phone": {
                   "example": "any"
                 },
-                "DriveSystem": {
+                "department": {
                   "example": "any"
                 },
-                "cargoSpace": {
+                "hireDate": {
+                  "example": "any"
+                },
+                "salary": {
                   "example": "any"
                 }
               }
@@ -186,11 +208,8 @@
           "401": {
             "description": "Unauthorized"
           },
-          "404": {
-            "description": "Not Found"
-          },
-          "422": {
-            "description": "Unprocessable Entity"
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -198,7 +217,9 @@
         }
       },
       "delete": {
-        "summary": "Delete evCars by id",
+        "tags": [
+          "employees"
+        ],
         "description": "",
         "parameters": [
           {
@@ -218,18 +239,17 @@
           "401": {
             "description": "Unauthorized"
           },
-          "404": {
-            "description": "Not Found"
-          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       }
     },
-    "/hydrogen/": {
+    "/trainings/": {
       "get": {
-        "summary": "Get all hdCars",
+        "tags": [
+          "trainings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -237,14 +257,13 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       },
       "post": {
-        "summary": "Create a new hdCar",
+        "tags": [
+          "trainings"
+        ],
         "description": "",
         "parameters": [
           {
@@ -253,25 +272,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "model": {
+                "trainingId": {
                   "example": "any"
                 },
-                "batteryCapacity": {
+                "employeeId": {
                   "example": "any"
                 },
-                "EnduranceDistance": {
+                "courseName": {
                   "example": "any"
                 },
-                "MaximumHorsepower": {
+                "provider": {
                   "example": "any"
                 },
-                "MaximumTorque": {
+                "completionDate": {
                   "example": "any"
                 },
-                "DriveSystem": {
-                  "example": "any"
-                },
-                "cargoSpace": {
+                "certificateLink": {
                   "example": "any"
                 }
               }
@@ -279,14 +295,14 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "204": {
+            "description": "No Content"
           },
           "401": {
             "description": "Unauthorized"
           },
-          "422": {
-            "description": "Unprocessable Entity"
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -294,9 +310,11 @@
         }
       }
     },
-    "/hydrogen/{id}": {
+    "/trainings/{id}": {
       "get": {
-        "summary": "Get hdCar by id",
+        "tags": [
+          "trainings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -315,14 +333,13 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       },
       "put": {
-        "summary": "Update hdCars by id",
+        "tags": [
+          "trainings"
+        ],
         "description": "",
         "parameters": [
           {
@@ -337,25 +354,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "model": {
+                "trainingId": {
                   "example": "any"
                 },
-                "batteryCapacity": {
+                "employeeId": {
                   "example": "any"
                 },
-                "EnduranceDistance": {
+                "courseName": {
                   "example": "any"
                 },
-                "MaximumHorsepower": {
+                "provider": {
                   "example": "any"
                 },
-                "MaximumTorque": {
+                "completionDate": {
                   "example": "any"
                 },
-                "DriveSystem": {
-                  "example": "any"
-                },
-                "cargoSpace": {
+                "certificateLink": {
                   "example": "any"
                 }
               }
@@ -372,11 +386,8 @@
           "401": {
             "description": "Unauthorized"
           },
-          "404": {
-            "description": "Not Found"
-          },
-          "422": {
-            "description": "Unprocessable Entity"
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -384,7 +395,9 @@
         }
       },
       "delete": {
-        "summary": "Delete hdCars by id",
+        "tags": [
+          "trainings"
+        ],
         "description": "",
         "parameters": [
           {
@@ -403,9 +416,6 @@
           },
           "401": {
             "description": "Unauthorized"
-          },
-          "404": {
-            "description": "Not Found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -413,5 +423,9 @@
         }
       }
     }
+  },
+  "indo": {
+    "title": "CSE 340 Project 2s",
+    "description": "Employees API"
   }
 }
